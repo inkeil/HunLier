@@ -1,5 +1,17 @@
 //Your Application's Landing Page.
-  var app = angular.module('app', ['ngRoute']).config(function($interpolateProvider, $routeProvider, $locationProvider) {
+var app = angular.module('app', ['ngRoute']).run(function ($rootScope) { 
+    // first create instance when app starts
+    $rootScope.progressbar = NProgress;
+
+    $rootScope.$on("$routeChangeStart", function () {
+        $rootScope.progressbar.start();
+    });
+
+    $rootScope.$on("$routeChangeSuccess", function () {
+        $rootScope.progressbar.done();
+    });
+})
+.config(function($interpolateProvider, $routeProvider, $locationProvider) {
     // To prevent the conflict of `{{` and `}}` symbols
     // between Blade template engine and AngularJS templating we need
     // to use different symbols for AngularJS.

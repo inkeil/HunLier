@@ -12,6 +12,7 @@
    
     <!-- Styles -->
     <link href="/assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel='stylesheet' href='/assets/js/nprogress/nprogress.css'/>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -75,6 +76,7 @@
     <!-- JavaScripts -->
     <script src="/assets/js/jquery/jquery-1.12.0.min.js"></script>
     <script src="/assets/css/bootstrap/js/bootstrap.min.js"></script>
+	<script src='/assets/js/nprogress/nprogress.js'></script>
 	<script src="/assets/js/angular/angular.min.js"></script>
 	<script src="/assets/js/angular/angular-route.min.js"></script>
 	<script src="/assets/js/app.js"></script>
