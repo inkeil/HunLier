@@ -42,9 +42,14 @@ var app = angular.module('app', ['ngRoute']).run(function ($rootScope) {
 	  $scope.$route = $route;
       $scope.$location = $location;
       $scope.$routeParams = $routeParams;
-	   $scope.submit = function() {
-        alert(this.email);
-		this.error_email=true;
-      };
+ 
+    // function to submit the form after all validation has occurred            
+    $scope.submitForm = function(isValid) {
+        // check to make sure the form is completely valid
+        if (isValid) {
+            alert('our form is amazing');
+        }
+ 
+    };
   });
 //  angular.bootstrap(document, ['app']);
