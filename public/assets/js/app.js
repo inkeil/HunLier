@@ -21,15 +21,15 @@ var app = angular.module('app', ['ngRoute']).run(function ($rootScope) {
 	$routeProvider
    .when('/login', {
     templateUrl: '/login',
-    controller: 'LoginController',
-    resolve: {
-      // I will cause a 1 second delay
-      delay: function($q, $timeout) {
-        var delay = $q.defer();
-        $timeout(delay.resolve, 1000);
-        return delay.promise;
-      }
-    }
+    controller: 'LoginController'
+  })
+    .when('/', {
+    templateUrl: '/main',
+    controller: 'HomeController'
+  })
+  .when('/register', {
+    templateUrl: '/register',
+    controller: 'RegisterController'
   })
   })
   .controller('HomeController', function($scope, $route, $routeParams, $location) {
@@ -37,7 +37,13 @@ var app = angular.module('app', ['ngRoute']).run(function ($rootScope) {
 	  $scope.$route = $route;
       $scope.$location = $location;
       $scope.$routeParams = $routeParams;
-  })  
+  }) 
+  .controller('RegisterController', function($scope, $route, $routeParams, $location) {
+      $scope.greeting = 'Your Application\'s Landing Page!';
+	  $scope.$route = $route;
+      $scope.$location = $location;
+      $scope.$routeParams = $routeParams;
+  })   
   .controller('LoginController', function($scope, $route, $routeParams, $location) {
 	  $scope.$route = $route;
       $scope.$location = $location;
