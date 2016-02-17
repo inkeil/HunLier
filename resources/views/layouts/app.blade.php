@@ -11,71 +11,90 @@
     <link href="/assets/css/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
    
     <!-- Styles -->
-    <link href="/assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/metro/css/metro.min.css" rel="stylesheet">
+	<link href="/assets/css/metro/css/metro-schemes.min.css" rel="stylesheet">
+	<link href="/assets/css/metro/css/metro-icons.css" rel="stylesheet">
 	<link rel='stylesheet' href='/assets/js/nprogress/nprogress.css'/>
+	<link rel='stylesheet' href='/assets/css/app.css'/>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout" ng-app="app">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/#') }}/">
-                    Laravel
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/#/home') }}">Home</a></li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/#/login') }}">Login</a></li>
-                        <li><a href="{{ url('/#/register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/#/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+	<div class="wrapper-container">
+	<div class="container">
+		<header class="margin20 no-margin-left no-margin-right">
+			<div class="clear-float">
+				<div class="place-right">
+					<form>
+						<div class="input-control text margin20" style="width: 300px">
+							<input type="text" name="q" placeholder="Search...">
+							<button class="button"><span class="mif-search"></span></button>
+						</div>
+					</form>
+				</div>
+				<a class="place-left" href="#" title="">
+					<h1>田园牧歌文化传媒有限公司</h1>
+				</a>
+			</div>
+		</header>
+		
+		<div class="app-bar pink" data-role="appbar">
+                    <a class="app-bar-element branding">Metro UI CSS</a>
+                    <span class="app-bar-divider"></span>
+                    <ul class="app-bar-menu">
+                        <li data-flexorderorigin="0" data-flexorder="1"><a href="">Home</a></li>
+                        <li data-flexorderorigin="1" data-flexorder="2">
+                            <a href="" class="dropdown-toggle">Products</a>
+                            <ul class="d-menu" data-role="dropdown">
+                                <li><a href="">Windows 10</a></li>
+                                <li><a href="">Spartan</a></li>
+                                <li><a href="">Outlook</a></li>
+                                <li><a href="">Office 2015</a></li>
+                                <li class="divider"></li>
+                                <li><a href="" class="dropdown-toggle">Other Products</a>
+                                    <ul class="d-menu" data-role="dropdown">
+                                        <li><a href="">Internet Explorer 10</a></li>
+                                        <li><a href="">Skype</a></li>
+                                        <li><a href="">Surface</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
-	<div ng-view>
-    @yield('content')
+                        <li>
+                            <a href="" class="dropdown-toggle">Support</a>
+                            <ul class="d-menu" data-role="dropdown">
+                                <li><a href="">About</a></li>
+                                <li><a href="">Contacts</a></li>
+                                <li><a href="">Community forum</a></li>
+                                <li>
+                                    <a href="" class="dropdown-toggle">Support</a>
+                                    <ul class="d-menu" data-role="dropdown">
+                                        <li><a href="" class="dropdown-toggle">About</a></li>
+                                        <li><a href="">Contacts</a></li>
+                                        <li><a href="">Community forum</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Help</a></li>
+                    </ul>
+					 <span class="app-bar-divider"></span>
+					 <ul class="app-bar-menu place-right"> 
+						<li  class="branding">
+							<a class="fg-white"><i class="fa fa-sign-in"></i> 登录</a>
+						</li>
+						<li class="branding">
+							<a class="fg-white"><i class="fa fa-group"></i> 注册</a>	
+						</li>
+					</ul>
+				</div>
+		</div>	
+		<div class="main-content container" role="main" ng-view>
+		@yield('content')
+		</div>
 	</div>
     <!-- JavaScripts -->
     <script src="/assets/js/jquery/jquery-1.12.0.min.js"></script>
-    <script src="/assets/css/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/css/metro/js/metro.min.js"></script>
 	<script src='/assets/js/nprogress/nprogress.js'></script>
 	<script src="/assets/js/angular/angular.min.js"></script>
 	<script src="/assets/js/angular/angular-route.min.js"></script>
