@@ -31,6 +31,14 @@ var app = angular.module('app', ['ngRoute']).run(function ($rootScope) {
     templateUrl: '/register',
     controller: 'RegisterController'
   })
+  .when('/u/:id', {
+    templateUrl: '/u/:id',
+    controller: 'ProfileController'
+  })
+  .when('/u/:id/settings/info', {
+    templateUrl: '/u/:id/settings/info',
+    controller: 'InfoController'
+  })
   })
   .controller('HomeController', function($scope, $route, $routeParams, $location) {
       $scope.greeting = 'Your Application\'s Landing Page!';
@@ -48,7 +56,14 @@ var app = angular.module('app', ['ngRoute']).run(function ($rootScope) {
 	  $scope.$route = $route;
       $scope.$location = $location;
       $scope.$routeParams = $routeParams;
- 
+ 	var form = $(".login-form");
+	form.css({
+		opacity: 1,
+		"-webkit-transform": "scale(1)",
+		"transform": "scale(1)",
+		"-webkit-transition": ".5s",
+		"transition": ".5s"
+	});
     // function to submit the form after all validation has occurred            
     $scope.submitForm = function(isValid) {
         // check to make sure the form is completely valid
@@ -57,5 +72,15 @@ var app = angular.module('app', ['ngRoute']).run(function ($rootScope) {
         }
  
     };
+  })
+  .controller('ProfileController',function($scope, $route, $routeParams, $location) {
+	  $scope.$route = $route;
+      $scope.$location = $location;
+      $scope.$routeParams = $routeParams;
+  })
+  .controller('InfoController',function($scope, $route, $routeParams, $location) {
+	  $scope.$route = $route;
+      $scope.$location = $location;
+      $scope.$routeParams = $routeParams;
   });
 //  angular.bootstrap(document, ['app']);

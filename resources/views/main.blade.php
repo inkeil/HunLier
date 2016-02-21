@@ -1,4 +1,4 @@
-<div ng-controller="HomeController">
+<div ng-controller="HomeController" class="bg-white">
 	<div class="tile-area no-padding">
 
 		<div class="tile-group no-margin no-padding">
@@ -51,7 +51,7 @@
 	</div>
 	
 	<div style="height: 100%" class="panel padding5">
-		<div class="heading bg-pink fg-white">
+		<div class="heading bg-green fg-white">
 			<span class="title text-light place-left">
 				<b>婚礼策划</b>
 			</span> 

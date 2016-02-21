@@ -14,83 +14,53 @@
     <link href="/assets/css/metro/css/metro.min.css" rel="stylesheet">
 	<link href="/assets/css/metro/css/metro-schemes.min.css" rel="stylesheet">
 	<link href="/assets/css/metro/css/metro-icons.css" rel="stylesheet">
+	<link href="/assets/css/metro/css/metro-responsive.min.css" rel="stylesheet">
 	<link rel='stylesheet' href='/assets/js/nprogress/nprogress.css'/>
 	<link rel='stylesheet' href='/assets/css/app.css'/>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 </head>
-<body id="app-layout" ng-app="app">
+<body id="app-layout" class="bg-grayLighter" ng-app="app">
 	<div class="wrapper-container">
-	<div class="container">
-		<header class="margin20 no-margin-left no-margin-right">
-			<div class="clear-float">
-				<div class="place-right">
-					<form>
-						<div class="input-control text margin20" style="width: 300px">
-							<input type="text" name="q" placeholder="Search...">
-							<button class="button"><span class="mif-search"></span></button>
-						</div>
-					</form>
-				</div>
-				<a class="place-left" href="#" title="">
-					<h1>田园牧歌文化传媒有限公司</h1>
-				</a>
-			</div>
-		</header>
-		
-		<div class="app-bar pink" data-role="appbar">
-                    <a class="app-bar-element branding">Metro UI CSS</a>
+	
+		<div class="app-bar red text-shadow" data-role="appbar">
+			<div class="container">	
+                    <a href="/#/" class="app-bar-element branding">婚礼儿</a>
                     <span class="app-bar-divider"></span>
                     <ul class="app-bar-menu">
-                        <li data-flexorderorigin="0" data-flexorder="1"><a href="">Home</a></li>
-                        <li data-flexorderorigin="1" data-flexorder="2">
-                            <a href="" class="dropdown-toggle">Products</a>
-                            <ul class="d-menu" data-role="dropdown">
-                                <li><a href="">Windows 10</a></li>
-                                <li><a href="">Spartan</a></li>
-                                <li><a href="">Outlook</a></li>
-                                <li><a href="">Office 2015</a></li>
-                                <li class="divider"></li>
-                                <li><a href="" class="dropdown-toggle">Other Products</a>
-                                    <ul class="d-menu" data-role="dropdown">
-                                        <li><a href="">Internet Explorer 10</a></li>
-                                        <li><a href="">Skype</a></li>
-                                        <li><a href="">Surface</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="" class="dropdown-toggle">Support</a>
-                            <ul class="d-menu" data-role="dropdown">
-                                <li><a href="">About</a></li>
-                                <li><a href="">Contacts</a></li>
-                                <li><a href="">Community forum</a></li>
-                                <li>
-                                    <a href="" class="dropdown-toggle">Support</a>
-                                    <ul class="d-menu" data-role="dropdown">
-                                        <li><a href="" class="dropdown-toggle">About</a></li>
-                                        <li><a href="">Contacts</a></li>
-                                        <li><a href="">Community forum</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="">Help</a></li>
+                        <li><a href="">首页</a></li>
+                        <li><a href="">婚品采购</a></li>
+                        <li><a href="">分享</a></li>
+                        <li><a href="">婚礼人</a></li>
                     </ul>
 					 <span class="app-bar-divider"></span>
 					 <ul class="app-bar-menu place-right"> 
 						<li  class="branding">
-							<a class="fg-white"><i class="fa fa-sign-in"></i> 登录</a>
+							<a href="/#/login" class="fg-white"><i class="fa fa-sign-in"></i> 登录</a>
 						</li>
 						<li class="branding">
-							<a class="fg-white"><i class="fa fa-group"></i> 注册</a>	
+							<a href="/#/register" class="fg-white"><i class="fa fa-group"></i> 注册</a>	
+						</li>
+						<li class="branding">
+							<a href="/#/u/123" class="fg-white"><i class="fa fa-group"></i> 个人中心</a>	
 						</li>
 					</ul>
-				</div>
+			</div>
 		</div>	
 		<div class="main-content container" role="main" ng-view>
 		@yield('content')
 		</div>
+		<footer id="footer" class="static-bottom container bg-white fg-white padding10 text-shadow">
+            <div class="bottom-menu-wrapper">
+                <ul class="horizontal-menu compact">
+                    <li><a class="fg-gray">&copy; 2016 婚礼儿</a></li>
+                    <li class="place-right fg-gray"><a href="#">关于我们</a></li>
+                    <li class="place-right fg-gray"><a href="#">Legal</a></li>
+                    <li class="place-right fg-gray"><a href="#">Advertise</a></li>
+                    <li class="place-right fg-gray"><a href="#">Help</a></li>
+                    <li class="place-right fg-gray"><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+        </footer>
 	</div>
     <!-- JavaScripts -->
     <script src="/assets/js/jquery/jquery-1.12.0.min.js"></script>

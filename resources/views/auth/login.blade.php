@@ -1,60 +1,28 @@
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" name="loginForm" ng-submit="submitForm(loginForm.$valid)" novalidate>
-                        {!! csrf_field() !!}
-
-                        <div class="form-group" ng-class="{'form-group has-error': error_email}">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" ng-model="email" name="email" required>
-                                    <span class="help-block" ng-show="loginForm.email.$error.required">
-                                        <strong>邮箱是必须的</strong>
-                                    </span>
-									<span class="help-block" ng-show="loginForm.email.$error.email">
-                                        <strong>非法的邮箱</strong>
-                                    </span>
-                            </div>
-                        </div>
-
-                        <div class="form-group" ng-class="{'form-group has-error': error_password}">
-                            <label class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input type="password" ng-model="password" class="form-control" name="password" required>
-                                    <span class="help-block" ng-show="loginForm.password.$error.required">
-                                        <strong>密码是必须的</strong>
-                                    </span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" ng-model="remember" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">
-                                    <i class="fa fa-btn fa-sign-in"></i>Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/#/password/reset') }}">Forgot Your Password?</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<div ng-controller="LoginController">
+    <div class="login-form padding20 block-shadow">
+        <form role="form" method="POST" name="loginForm" ng-submit="submitForm(loginForm.$valid)" novalidate>
+            <h1 class="text-light text-center">登录婚礼儿</h1>
+            <hr class="thin"/>
+            <br />
+            <div class="input-control text full-size" data-role="input">
+                <label for="user_login">用户邮箱:</label>
+                <input type="text"  ng-model="email" name="email" id="user_email" required>
+                <button class="button helper-button clear"><span class="mif-cross"></span></button>
             </div>
-        </div>
+            <br />
+            <br />
+            <div class="input-control password full-size" data-role="input">
+                <label for="user_password">用户密码:</label>
+                <input type="password" ng-model="password"  name="password"  id="user_password" required>
+                <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+            </div>
+            <br />
+            <br />
+            <div class="form-actions">
+                <button type="submit" class="button primary" ng-disabled="loginForm.$invalid">登录</button>
+                <button type="button" class="button link">Cancel</button>
+            </div>
+        </form>
     </div>
 </div>

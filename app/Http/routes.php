@@ -19,6 +19,12 @@ Route::get('/main', function () {
     return view('main');
 });
 
+Route::group([/*'domain' => 'my.hunlier.com',*/ 'namespace' => 'My', /*'middleware' => 'auth'*/], function () {
+    Route::get('u/{id}',  ['as' => 'user', 'uses' => 'UsersController@getProfile']);
+	 Route::get('u/{id}/settings/info',  ['as' => 'user', 'uses' => 'UsersController@getInfo']);
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
